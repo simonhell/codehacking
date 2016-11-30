@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','role_id'
     ];
 
     /**
@@ -31,5 +31,13 @@ class User extends Authenticatable
     public function role()
     {
        return $this->belongsTo('App\Role');
+    }
+
+    public function getIsActiveStringAttribute()
+    {
+        if($this->is_active == 1)
+            return "Active";
+        else
+            return "Not Active";
     }
 }

@@ -25,8 +25,6 @@
     <![endif]-->
 
 
-
-
 </head>
 
 <body id="admin-page">

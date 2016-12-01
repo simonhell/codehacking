@@ -26,11 +26,11 @@
 
                   <tr>
                       <td>{{ $post->id  }}</td>
-                      <td>{{ $post ->user->name}}</td>
-                      <td><img src="{{ $post->photo->path }}" height="50" alt=""/> </td>
+                      <td><a href="{{route('posts.edit',$post->id)}}">{{ $post ->user->name}}</a></td>
+                      <td><img src="{{$post->photo ? $post->photo->path : App\Photos::placeholder()}}" height="50" alt=""/> </td>
                       <td>{{ $post->category->name }}</td>
                       <td>{{ $post->title }}</td>
-                      <td> {{ $post->content }}</td>
+                      <td> {{ str_limit($post->content,50) }}</td>
                       <td> {{ $post->created_at->diffForHumans() }}</td>
                       <td> {{ $post->updated_at->diffForHumans() }}</td>
                   </tr>
@@ -40,6 +40,8 @@
 
          </tbody>
        </table>
+
+
 
 
 @endsection

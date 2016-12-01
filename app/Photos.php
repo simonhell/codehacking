@@ -21,7 +21,10 @@ class Photos extends Model
 
     public function getPathAttribute($photo)
     {
-        return $this->directory . $photo ;
+        if($photo != null)
+            return $this->directory . $photo ;
+        else
+            return $this->directory . $this->placeholder;
     }
 
     public static function placeholder()

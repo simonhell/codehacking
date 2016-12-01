@@ -5,7 +5,9 @@
 
     <h1>Create Post</h1>
 
+
         {{Form::open(array('action' => 'AdminPostsController@store', 'method'=>'POST','files'=>true ))}}
+
             <div class="form-group">
                 {{ Form::label('title', 'Title:') }}
                 {{ Form::text('title',null,['class'=>'form-control'])}}
@@ -29,6 +31,8 @@
             {{ Form::submit('Click Me!', ['class'=>'btn btn-primary']) }}
 
         {{ Form::close() }}
+
+
 
 
         <div class="row">

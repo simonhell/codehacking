@@ -7,20 +7,22 @@
      <table class="table table-bordered">
          <thead>
            <tr>
-                 <th>Firstname</th>
-                 <th>Lastname</th>
-                 <th>Email</th>
-                 <th>Role</th>
-                 <th>Active</th>
-                 <th>Created at</th>
-                 <th>Updated at</th>
+               <th>ID</th>
+               <th>Picture</th>
+               <th>Lastname</th>
+               <th>Email</th>
+               <th>Role</th>
+               <th>Active</th>
+               <th>Created at</th>
+               <th>Updated at</th>
            </tr>
          </thead>
          <tbody>
             @foreach($users as $user)
                 <tr>
                     <td>{{$user->id}}</td>
-                    <td>{{$user->name}}</td>
+                    <td><img src="{{$user->photo ? $user->photo->path : \App\Photos::placeholder()}}" alt="" height="75"/></td>
+                    <td><a href="{{route('users.edit', $user->id)}}">{{$user->name}}</a></td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->role->name}}</td>
                     <td>{{$user->is_active_string}}</td>

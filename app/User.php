@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\Photos;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -43,6 +43,8 @@ class User extends Authenticatable
 
     public function photo()
     {
-        return $this->belongsTo('App\Photo');
+        return $this->belongsTo('App\Photos');
     }
+
+
 }

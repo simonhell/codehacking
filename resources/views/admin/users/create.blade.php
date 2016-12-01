@@ -39,7 +39,7 @@
     </div>
 
 
-    {!! Form::submit('Create Post', ['class'=>'btn btn-primary']) !!}
+    {!! Form::submit('Save User', ['class'=>'btn btn-primary']) !!}
     {!! Form::close() !!}
 
 

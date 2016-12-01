@@ -28,7 +28,7 @@
                       <td>{{ $post->id  }}</td>
                       <td>{{ $post ->user->name}}</td>
                       <td><img src="{{ $post->photo->path }}" height="50" alt=""/> </td>
-                      <td>{{ $post->category_id }}</td>
+                      <td>{{ $post->category->name }}</td>
                       <td>{{ $post->title }}</td>
                       <td> {{ $post->content }}</td>
                       <td> {{ $post->created_at->diffForHumans() }}</td>

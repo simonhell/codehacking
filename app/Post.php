@@ -22,7 +22,7 @@ class Post extends Model
 
     public function category()
     {
-        return null;
+        return $this->belongsTo('App\Category');
     }
 
 }
